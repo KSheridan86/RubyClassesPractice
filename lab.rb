@@ -62,6 +62,42 @@
 # end
 
 # 4th pass at creating a class in Ruby, using to_s to override classes in ruby
+# class Person
+#     @@counter = 0
+#     attr_accessor :name, :age
+
+#     def initialize(aName, aAge)
+#         @name = aName
+#         @age = aAge
+#         @@counter +=1
+#     end
+
+#     def to_s
+#         "The persons name is #{@name} and they are #{@age}\n"
+#     end
+    
+
+#     def numPersons
+#         puts(@@counter)
+#     end
+
+# end
+
+# console tests for the 3rd and 4th passes
+# puts("\n")
+# p1 = Person.new("Josh", 30)
+# puts(p1.name)
+# puts(p1.age)
+# p1.name="Joshua"
+# puts p1.name
+# p2 = Person.new("Keith", 21)
+# p1.numPersons
+# p2.numPersons
+# puts(p1)
+# puts(p2)
+# puts("\n")
+
+# 5th pass at creating a class in Ruby, using inheritance
 class Person
     @@counter = 0
     attr_accessor :name, :age
@@ -83,18 +119,23 @@ class Person
 
 end
 
+class Student < Person
+    attr_accessor :studentNumber
+
+    def initialize(aName, aAge, aStudentNumber)
+        super(aName, aAge)
+        @studentNumber = aStudentNumber
+    end
+
+    def to_s
+        "The students student number is #{@studentNumber}, their name is #{@name} and they are #{@age}\n"
+    end
+
+end
+s1 = Student.new("Michael", 25, "X11223344")
+
 puts("\n")
-p1 = Person.new("Josh", 30)
-puts(p1.name)
-puts(p1.age)
-p1.name="Joshua"
-puts p1.name
-p2 = Person.new("Keith", 21)
-p1.numPersons
-p2.numPersons
-puts(p1)
-puts(p2)
+puts(s1)
+puts s1.methods 
+puts s1.instance_variables
 puts("\n")
-
-
-
