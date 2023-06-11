@@ -45,6 +45,23 @@
 # puts ("\n" + p1.name)
 
 # 3rd pass at creating a class in Ruby, using @@ to create class variables
+# class Person
+#     @@counter = 0
+#     attr_accessor :name, :age
+
+#     def initialize(aName, aAge)
+#         @name = aName
+#         @age = aAge
+#         @@counter +=1
+#     end
+
+#     def numPersons
+#         puts(@@counter)
+#     end
+
+# end
+
+# 4th pass at creating a class in Ruby, using to_s to override classes in ruby
 class Person
     @@counter = 0
     attr_accessor :name, :age
@@ -55,12 +72,18 @@ class Person
         @@counter +=1
     end
 
+    def to_s
+        "The persons name is #{@name} and they are #{@age}\n"
+    end
+    
+
     def numPersons
         puts(@@counter)
     end
 
 end
 
+puts("\n")
 p1 = Person.new("Josh", 30)
 puts(p1.name)
 puts(p1.age)
@@ -71,6 +94,7 @@ p1.numPersons
 p2.numPersons
 puts(p1)
 puts(p2)
+puts("\n")
 
 
 
