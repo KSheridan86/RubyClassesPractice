@@ -1,3 +1,41 @@
+# Week 3 Lab
+
+class Animal
+    def breath
+        puts "Inhale and exhale"
+    end
+end
+
+class Cat < Animal
+    def speak
+        puts "Meow"
+    end
+end
+
+class Dog < Animal
+    def speak
+        puts "Woof!"
+    end
+end
+
+# Create an instance of the Cat & Dog classes
+cat = Cat.new
+dog = Dog.new
+
+# Call the methods on the cat instance
+puts("\n")
+puts("Cat class:")
+cat.breath
+cat.speak
+
+# Call the methods on the dog instance
+puts("\n")
+puts("Dog class:")
+dog.breath
+dog.speak
+puts("\n")
+
+
 # First pass at creating a class in Ruby
 
 # class Person
@@ -98,44 +136,44 @@
 # puts("\n")
 
 # 5th pass at creating a class in Ruby, using inheritance
-class Person
-    @@counter = 0
-    attr_accessor :name, :age
+# class Person
+#     @@counter = 0
+#     attr_accessor :name, :age
 
-    def initialize(aName, aAge)
-        @name = aName
-        @age = aAge
-        @@counter +=1
-    end
+#     def initialize(aName, aAge)
+#         @name = aName
+#         @age = aAge
+#         @@counter +=1
+#     end
 
-    def to_s
-        "The persons name is #{@name} and they are #{@age}\n"
-    end
+#     def to_s
+#         "The persons name is #{@name} and they are #{@age}\n"
+#     end
     
 
-    def numPersons
-        puts(@@counter)
-    end
+#     def numPersons
+#         puts(@@counter)
+#     end
 
-end
+# end
 
-class Student < Person
-    attr_accessor :studentNumber
+# class Student < Person
+#     attr_accessor :studentNumber
 
-    def initialize(aName, aAge, aStudentNumber)
-        super(aName, aAge)
-        @studentNumber = aStudentNumber
-    end
+#     def initialize(aName, aAge, aStudentNumber)
+#         super(aName, aAge)
+#         @studentNumber = aStudentNumber
+#     end
 
-    def to_s
-        "The students student number is #{@studentNumber}, their name is #{@name} and they are #{@age}\n"
-    end
+#     def to_s
+#         "The students student number is #{@studentNumber}, their name is #{@name} and they are #{@age}\n"
+#     end
 
-end
-s1 = Student.new("Michael", 25, "X11223344")
+# end
+# s1 = Student.new("Michael", 25, "X11223344")
 
-puts("\n")
-puts(s1)
-puts s1.methods 
-puts s1.instance_variables
-puts("\n")
+# puts("\n")
+# puts(s1)
+# puts s1.methods 
+# puts s1.instance_variables
+# puts("\n")
